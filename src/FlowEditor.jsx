@@ -9,7 +9,9 @@ class FlowEditor extends Component {
   }
   render() {
     return (
+      <div style={{width: '100%'}}>
         <Editor editorState={this.state.editorState} onChange={this.onChange} />
+      </div>
     );
   }
 }
