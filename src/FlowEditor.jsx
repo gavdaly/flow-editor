@@ -1,6 +1,12 @@
 import React, {Component} from 'react';
 import {Editor, EditorState} from 'draft-js';
 
+const style = {
+   width: '100%',
+   padding: '2vmin'
+  }
+
+
 class FlowEditor extends Component {
   constructor(props) {
     super(props);
@@ -9,7 +15,7 @@ class FlowEditor extends Component {
   }
   render() {
     return (
-      <div style={{width: '100%'}}>
+      <div style={style}>
         <Editor editorState={this.state.editorState} onChange={this.onChange} />
       </div>
     );

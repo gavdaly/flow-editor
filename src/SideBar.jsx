@@ -11,6 +11,7 @@ const SideBar = () => {
             <li>format</li>
           </ul>
         </li>
+        <li>settings</li>
         <li>connected</li>
       </ul>
     </nav>
