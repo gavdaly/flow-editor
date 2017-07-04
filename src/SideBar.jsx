@@ -1,5 +1,12 @@
 import React from 'react'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
+import Radium from 'radium'
 
+// @Radium
 const SideBar = () => {
   return (
     <nav id='sidebar' style={{backgroundColor: '#eee'}}>

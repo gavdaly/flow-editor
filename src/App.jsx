@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import Radium from 'radium'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
+
 import FlowEditor from './FlowEditor'
 import Header from './Header'
 import SideBar from './SideBar'
@@ -19,6 +26,7 @@ const style = {
   }
 }
 
+// @Radium
 class App extends Component {
   render() {
     return (
