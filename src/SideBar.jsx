@@ -6,7 +6,8 @@ import {
 } from 'react-router-dom'
 import Radium from 'radium'
 
-// @Radium
+import Connected from './components/Connected'
+
 const SideBar = () => {
   return (
     <nav id='sidebar' style={{backgroundColor: '#eee'}}>
@@ -19,10 +20,15 @@ const SideBar = () => {
           </ul>
         </li>
         <li>settings</li>
-        <li>connected</li>
+        <li>
+          <Connected
+            connected="online"
+            offline="offline"
+          />
+        </li>
       </ul>
     </nav>
   )
 }
 
-export default SideBar
+export default Radium(SideBar)
