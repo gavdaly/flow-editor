@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 
-// import {
-//   BrowserRouter as Router,
-//   Route,
-//   Link
-// } from 'react-router-dom'
-
 import FlowEditor from './components/FlowEditor'
 import DocumentList from './components/DocumentList'
 import SideBar from './components/SideBar'
@@ -21,35 +15,24 @@ const documents = [
   { title: "The Old Man and the Sea", id: 7 }
 ]
 
+const mode = 'write'
 
-const style = {
-  App: {
-    minHeight: '100vh',
-    display: 'flex',
-    flexDirection: 'column'
-  },
-  a: {
-    flex: '1',
-    display: 'flex',
-    flexDirection: 'row'
-  }
-}
 
-// @Radium
 class App extends Component {
   state = {
-    documents
+    documents,
+    mode
   }
   render() {
     return (
-      <div style={style.App} className="App">
-        <div id='a' style={style.a}>
+      <div className="App">
+        <div id='a' className='a'>
           <SideBar />
           <DocumentList
             documents={this.state.documents}
           />
           <FlowEditor
-            mode='write'
+            mode={this.state.mode}
           />
         </div>
       </div>
