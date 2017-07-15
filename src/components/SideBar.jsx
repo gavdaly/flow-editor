@@ -7,7 +7,7 @@ import './SideBar.css'
 
 const SideBar = () => {
   return (
-    <nav id='sidebar' className='sidebar'>
+    <aside id='sidebar' className='sidebar'>
       <h1>Flow</h1>
       <ul style={{listStyle: 'none'}}>
         <li>write</li>
@@ -28,7 +28,7 @@ const SideBar = () => {
         </aside>
       </footer>
       <LeftArrow />
-    </nav>
+    </aside>
   )
 }
 
