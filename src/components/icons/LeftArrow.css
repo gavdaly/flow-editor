@@ -1,0 +1,12 @@
+svg {
+  fill: hsla(0, 0%, 50%, 0.5);
+  width: 2vmin;
+  overflow: hidden;
+  opacity: 1;
+  transition: height 500ms, opacity 500ms;
+}
+
+svg.hide {
+  width: 0;
+  opacity: 0;
+}
