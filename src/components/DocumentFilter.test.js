@@ -1,5 +1,5 @@
 import React from 'react'
-import DocumentItem from './DocumentItem'
+import DocumentFilter from './DocumentFilter'
 
 import { shallow } from 'enzyme'
 
@@ -8,5 +8,9 @@ let wrapper
 describe('<DocumentItem>', () => {
   beforeEach(() => { wrapper = shallow(<DocumentFilter />) })
 
-  it('')
+  it('has an input', () => {
+    expect (
+      wrapper.containsMatchingElement(<input />)
+    ).toBe(true)
+  })
 })
