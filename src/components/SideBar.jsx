@@ -3,15 +3,18 @@ import React from 'react'
 import Connected from './Connected'
 import LeftArrow from './icons/LeftArrow'
 
+import './SideBar.css'
+
 const SideBar = () => {
   return (
-    <nav id='sidebar' style={{backgroundColor: '#eee', padding: '2vmin'}}>
+    <nav id='sidebar' className='sidebar'>
       <h1>Flow</h1>
-        <ul style={{listStyle: 'none'}}>
-          <li>write</li>
-          <li>edit</li>
-          <li>format</li>
-        </ul>
+      <ul style={{listStyle: 'none'}}>
+        <li>write</li>
+        <li>edit</li>
+        <li>format</li>
+      </ul>
+      <div className='spacer'></div>
       <div>
         Settings
       </div>
@@ -20,7 +23,9 @@ const SideBar = () => {
           connected="online"
           offline="offline"
         />
+        <aside className='byline'>
         by Gavin Daly
+        </aside>
       </footer>
       <LeftArrow />
     </nav>

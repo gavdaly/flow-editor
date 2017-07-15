@@ -1,0 +1,12 @@
+.sidebar {
+  height: 100vh;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  padding: 2vmin;
+}
+
+
+.byline {
+  font-size: 0.5rem
+}
