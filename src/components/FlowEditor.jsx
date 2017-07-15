@@ -1,10 +1,15 @@
 import React, {Component} from 'react'
-import {Editor, EditorState} from 'draft-js'
 
-const style = {
-    width: '100%',
-    padding: '2vmin'
-  }
+import './FlowEditor.css'
+import '../../node_modules/draft-js/dist/Draft.css'
+
+import {
+  Editor,
+  EditorState,
+  convertFromRaw,
+  convertToRaw
+} from 'draft-js'
+
 
 
 class FlowEditor extends Component {
@@ -20,11 +25,11 @@ class FlowEditor extends Component {
   }
   render() {
     return (
-      <div onClick={this._click} style={style}>
+      <div onClick={this._click} className='editorWrapper'>
         <Editor
           editorState={this.state.editorState}
           onChange={this.onChange}
-          // placeholder='Ready to get in the flow...'
+          placeholder='Ready to get in the flow...'
           ref='editor'
         />
       </div>

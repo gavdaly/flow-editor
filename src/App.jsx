@@ -21,18 +21,23 @@ const mode = 'write'
 class App extends Component {
   state = {
     documents,
-    mode
+    mode,
+    currentDocument: ''
   }
   render() {
     return (
       <div className="App">
         <div id='a' className='a'>
-          <SideBar />
+          <SideBar
+            mode={this.state.mode}
+          />
           <DocumentList
             documents={this.state.documents}
+            currentDocument={this.state.currentDocument}
           />
           <FlowEditor
             mode={this.state.mode}
+            currentDocument={this.currentDocument}
           />
         </div>
       </div>
