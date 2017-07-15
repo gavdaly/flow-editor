@@ -8,7 +8,7 @@ import './SideBar.css'
 const SideBar = () => {
   return (
     <aside id='sidebar' className='sidebar'>
-      <h1>Flow</h1>
+      <h1 className='logo'>Flow</h1>
       <ul style={{listStyle: 'none'}}>
         <li>write</li>
         <li>edit</li>
@@ -21,7 +21,7 @@ const SideBar = () => {
       <footer>
         <Connected
           connected="online"
-          offline="offline"
+          disconnected="offline"
         />
         <aside className='byline'>
         by Gavin Daly
