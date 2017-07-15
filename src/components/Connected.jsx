@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Connected = ({connected, offline}) => {
-  return <div className='connection'>{navigator.onLine ? connected : offline}</div>
+const Connected = ({connected, disconnected}) => {
+  return <div className='connection'>{navigator.onLine ? connected : disconnected}</div>
 }
 
 export default Connected
