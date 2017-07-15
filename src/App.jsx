@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
 
 import FlowEditor from './components/FlowEditor'
 import DocumentList from './components/DocumentList'
@@ -40,4 +40,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App

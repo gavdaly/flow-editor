@@ -8,5 +8,10 @@ let wrapper
 describe('<DocumentList>', () => {
   beforeEach(() => { wrapper = shallow(<DocumentList />) })
 
-  it('')
+  it('should display no list if there are to documents')
+  it('should show the document filter')
+
+  describe('onFilter', () => {
+    it('should filter the list')
+  })
 })

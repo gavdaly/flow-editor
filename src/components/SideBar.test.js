@@ -1,6 +1,8 @@
 import React from 'react'
 import SideBar from './SideBar'
 
+import Connected from './Connected'
+
 import jest from 'jest'
 
 import { shallow } from 'enzyme'
@@ -29,9 +31,9 @@ describe('<SideBar>', () => {
   })
 
   it('should show connection status', () => {
-    // expect(
-    //   wrapper.contains(<Connected />)
-    // ).toBe(true)
+    expect(
+      // wrapper.contains(<Connected />)
+    ).toBe(true)
   })
 
   it('should have the by line', () => {

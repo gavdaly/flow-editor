@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Editor, EditorState} from 'draft-js';
+import React, {Component} from 'react'
+import {Editor, EditorState} from 'draft-js'
 
 const style = {
     width: '100%',
@@ -9,9 +9,11 @@ const style = {
 
 class FlowEditor extends Component {
   constructor(props) {
-    super(props);
-    this.state = {editorState: EditorState.createEmpty()};
-    this.onChange = (editorState) => this.setState({editorState});
+    super(props)
+    this.state = {
+      editorState: EditorState.createEmpty()
+    }
+    this.onChange = (editorState) => this.setState({editorState})
   }
   _click = () => {
     this.refs.editor.focus()
@@ -26,7 +28,7 @@ class FlowEditor extends Component {
           ref='editor'
         />
       </div>
-    );
+    )
   }
 }
 

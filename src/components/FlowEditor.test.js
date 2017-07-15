@@ -8,5 +8,10 @@ let wrapper
 describe('<FlowEditor>', () => {
   beforeEach(() => { wrapper = shallow(<FlowEditor />) })
 
-  it('')
+  it('should display the correct editor', () => {
+
+  })
+  it('should display an editor', () => {
+    
+  })
 })

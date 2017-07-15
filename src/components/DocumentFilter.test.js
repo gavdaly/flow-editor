@@ -13,4 +13,8 @@ describe('<DocumentItem>', () => {
       wrapper.containsMatchingElement(<input />)
     ).toBe(true)
   })
+
+  describe('when text is typed in the input', () => {
+    it('should trigger onInputChange')
+  })
 })
