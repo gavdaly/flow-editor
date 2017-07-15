@@ -20,7 +20,7 @@ const SideBar = () => {
       </div>
       <footer>
         <Connected
-          connected="online"
+          connected="⚡️"
           disconnected="offline"
         />
         <aside className='byline'>
