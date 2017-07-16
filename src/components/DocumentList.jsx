@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 import './DocumentList.css'
 
@@ -7,34 +7,56 @@ import DocumentFilter from './DocumentFilter'
 import LeftArrow from './icons/LeftArrow'
 import HoverDrawer from './HoverDrawer'
 
-const DocumentList = ({activeDocument, documents, selectedDocument}) => {
-  const documentList = documents.map(doc => {
+class DocumentList extends Component  {
+  state = {
+    filterString: ''
+  }
+
+
+
+
+
+  render() {
+
+    const documentList = this.props.documents.map(doc => {
+      return (
+        <li
+          key={doc.id}
+        >
+          <DocumentItem
+            title={doc.title}
+            tags={doc.tags}
+            id={doc.id}
+            onDocumentSelected={this.props.selectedDocument}
+          />
+        </li>
+      )
+    })
+
+    const icon = <LeftArrow />
+
+    if(this.props.documentList) {
+      const filteredList = this.props.documentList.filter(d => {
+        const matchesTags = d.tags.reduce((previous, current) => {
+          return previous || current.includes(this.state.filterString)
+        }, false)
+        return d.title.includes(this.state.filterString) || matchesTags
+      })
+    }
+
     return (
-      <li
-        key={doc.id}
+      <HoverDrawer
+        icon={icon}
       >
-        <DocumentItem
-          title={doc.title}
-          tags={doc.tags}
-          id={doc.id}
-          onDocumentSelected={selectedDocument}
-        />
-      </li>
+        <div className='documentList'>
+          <DocumentFilter />
+          <ul style={{listStyle: 'none'}}>
+            {documentList}
+          </ul>
+        </div>
+      </HoverDrawer>
     )
-  })
-  const icon = <LeftArrow />
-  return (
-    <HoverDrawer
-      icon={icon}
-    >
-      <div className='documentList'>
-        <DocumentFilter />
-        <ul style={{listStyle: 'none'}}>
-          {documentList}
-        </ul>
-      </div>
-    </HoverDrawer>
-  )
+  }
 }
 
 export default DocumentList
