@@ -1,8 +1,23 @@
 import React from 'react'
 
-const DocumentItem = ({title}) => {
+import './DocumentItem.css'
+
+const DocumentItem = ({title, tags, id, onDocumentSelected}) => {
+  const _click = () => {
+    return onDocumentSelected(id)
+  }
   return (
-    <div>{title}</div>
+  <div
+    className='documentItem'
+    onClick={_click}
+  >
+    {title}
+    <ul className='documentTitle'>
+      {tags.map(tag => {
+        return <li className='tag'>#{tag}</li>
+      })}
+    </ul>
+  </div>
   )
 }
 

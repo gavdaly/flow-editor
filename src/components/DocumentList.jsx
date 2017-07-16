@@ -1,11 +1,13 @@
 import React from 'react'
 
+import './DocumentList.css'
+
 import DocumentItem from './DocumentItem'
 import DocumentFilter from './DocumentFilter'
 import LeftArrow from './icons/LeftArrow'
 import HoverDrawer from './HoverDrawer'
 
-const DocumentList = ({activeDocument, documents}) => {
+const DocumentList = ({activeDocument, documents, selectedDocument}) => {
   const documentList = documents.map(doc => {
     return (
       <li
@@ -13,6 +15,9 @@ const DocumentList = ({activeDocument, documents}) => {
       >
         <DocumentItem
           title={doc.title}
+          tags={doc.tags}
+          id={doc.id}
+          onDocumentSelected={selectedDocument}
         />
       </li>
     )
