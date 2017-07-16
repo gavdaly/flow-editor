@@ -6,5 +6,6 @@ There are three modes write, edit, and format.
 
 ##### Todo:
 
+- implement the tk list
 - integrate a store
 - write a backend
