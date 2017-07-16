@@ -89,7 +89,11 @@ class FlowEditor extends Component {
   render() {
     return (
       <div className='documentWrapper'>
-        <input placeholder='title' />
+        <div className="group">
+          <input type="text" placeholder='title' />
+          <span className="highlight"></span>
+          <span className="bar"></span>
+        </div>
         <div onClick={this._click} className='editorWrapper'>
           {{
             write: <Editor
