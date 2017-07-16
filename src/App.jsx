@@ -24,12 +24,19 @@ class App extends Component {
     mode,
     currentDocument: ''
   }
+  handleModeSelect = (mode) => {
+    this.setMode(mode)
+  }
+  setMode = (mode) => {
+    this.setState({ mode })
+  }
   render() {
     return (
       <div className="App">
         <div id='a' className='a'>
           <SideBar
             mode={this.state.mode}
+            selectMode={this.handleModeSelect}
           />
           <DocumentList
             documents={this.state.documents}

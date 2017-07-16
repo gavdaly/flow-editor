@@ -2,11 +2,17 @@ import React from 'react'
 
 import Connected from './Connected'
 import HoverDrawer from './HoverDrawer'
+import ModeSelector from './ModeSelector'
 import LeftArrow from './icons/LeftArrow'
 
 import './SideBar.css'
 
-const SideBar = () => {
+const modes = ['write', 'edit', 'format']
+
+const SideBar = ({selectMode}) => {
+  const onSelectMode = (mode) => {
+    selectMode(mode)
+  }
   const icon = <LeftArrow />
   return (
     <HoverDrawer
@@ -14,11 +20,10 @@ const SideBar = () => {
     >
       <aside id='sidebar' className='sidebar'>
         <h1 className='logo'>Flow</h1>
-        <ul style={{listStyle: 'none'}}>
-          <li>write</li>
-          <li>edit</li>
-          <li>format</li>
-        </ul>
+        <ModeSelector
+          selectMode={onSelectMode}
+          options={modes}
+        />
         <div className='spacer'></div>
         <div>
           Settings
