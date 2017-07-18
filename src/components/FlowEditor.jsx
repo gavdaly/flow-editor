@@ -14,39 +14,11 @@ import {
 import BlockStyleControls from './BlockStyleControls'
 import InlineStyleControls from './InlineStyleControls'
 
-import { observer } from 'mobx-react'
-import { observable } from 'mobx'
-
-const state = observable({
-  test: 'one'
-})
-
-
-
-// Custom overrides for "code" style.
-const styleMap = {
-  CODE: {
-    backgroundColor: 'rgba(0, 0, 0, 0.05)',
-    fontFamily: '"Inconsolata", "Menlo", "Consolas", monospace',
-    fontSize: 16,
-    padding: 2,
-  },
-}
-
-function getBlockStyle(block) {
-  switch (block.getType()) {
-    case 'blockquote': return 'RichEditor-blockquote'
-    default: return null
-  }
-}
-
-
 class FlowEditor extends Component {
   state = {
     editorState: EditorState.createEmpty()
   }
   _click = () => {
-    console.log(state)
     this.refs.editor.focus()
   }
 
@@ -85,7 +57,6 @@ class FlowEditor extends Component {
     )
   }
 
-
   render() {
     return (
       <div className='documentWrapper'>
@@ -111,8 +82,6 @@ class FlowEditor extends Component {
                 <Editor
                   handleKeyCommand={this.handleKeyCommand}
                   onTab={this.onTab}
-                  blockStyleFn={getBlockStyle}
-                  customStyleMap={styleMap}
                   editorState={this.state.editorState}
                   onChange={this.onChange}
                   placeholder='Nothing to edit'
@@ -132,8 +101,6 @@ class FlowEditor extends Component {
               <Editor
                 handleKeyCommand={this.handleKeyCommand}
                 onTab={this.onTab}
-                blockStyleFn={getBlockStyle}
-                customStyleMap={styleMap}
                 editorState={this.state.editorState}
                 onChange={this.onChange}
                 placeholder='Nothing to format'

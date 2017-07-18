@@ -12,13 +12,19 @@ class DocumentList extends Component  {
     filterString: ''
   }
 
-
-
-
+  handleDocumentFilter = (string) => {
+    this.setState({ filterString: string })
+  }
 
   render() {
+    const filteredList = this.props.documents.filter(d => {
+      const matchesTags = d.tags.reduce((previous, current) => {
+        return previous || current.includes(this.state.filterString)
+      }, false)
+      return d.title.includes(this.state.filterString) || matchesTags
+    })
 
-    const documentList = this.props.documents.map(doc => {
+    const documentList = filteredList.map(doc => {
       return (
         <li
           key={doc.id}
@@ -35,21 +41,12 @@ class DocumentList extends Component  {
 
     const icon = <LeftArrow />
 
-    if(this.props.documentList) {
-      const filteredList = this.props.documentList.filter(d => {
-        const matchesTags = d.tags.reduce((previous, current) => {
-          return previous || current.includes(this.state.filterString)
-        }, false)
-        return d.title.includes(this.state.filterString) || matchesTags
-      })
-    }
-
     return (
       <HoverDrawer
         icon={icon}
       >
         <div className='documentList'>
-          <DocumentFilter />
+          <DocumentFilter onFilterChange={this.handleDocumentFilter} string={this.state.filterString} />
           <ul style={{listStyle: 'none'}}>
             {documentList}
           </ul>

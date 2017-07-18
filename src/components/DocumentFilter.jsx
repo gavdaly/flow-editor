@@ -1,8 +1,11 @@
 import React from 'react'
 
-const DocumentFilter = () => {
+const DocumentFilter = ({onFilterChange, string}) => {
+  const _onChange = (e) => {
+    onFilterChange(e.target.value)
+  }
   return(
-    <input />
+    <input onChange={_onChange} value={string} />
   )
 }
 

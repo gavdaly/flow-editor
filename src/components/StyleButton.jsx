@@ -1,13 +1,9 @@
 import React from 'react'
 
 class StyleButton extends React.Component {
- constructor() {
-   super()
-   this.onToggle = (e) => {
-     this.props.onToggle(this.props.style)
-   }
- }
-
+  onToggle = () => {
+    this.props.onToggle(this.props.style)
+  }
   render() {
     let className = 'RichEditor-styleButton'
     if (this.props.active) {
