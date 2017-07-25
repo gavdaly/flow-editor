@@ -69,7 +69,7 @@
 }
 
 .RichEditor-activeButton {
-  color: #5890ff;
+  color: hsl(192, 78%, 68%);
 }
 
 
@@ -83,7 +83,7 @@ input {
   display:block;
   width:100%;
   border:none;
-  border-bottom:1px solid #757575;
+  border-bottom:0.5px solid #eee;
 }
 input:focus { outline:none; }
 
@@ -96,11 +96,19 @@ input:focus { outline:none; }
   width:0;
   bottom:1px;
   position:absolute;
-  background:#5264AE;
   transition:0.2s ease all;
   -moz-transition:0.2s ease all;
   -webkit-transition:0.2s ease all;
 }
+
+.bar:before {
+  background: linear-gradient(to right, hsl(192, 73%, 54%), hsl(192, 78%, 68%));
+}
+
+.bar:after 	{
+  background: linear-gradient(to right, hsl(192, 68%, 40%), hsl(192, 73%, 54%));
+}
+
 .bar:before {
   left:50%;
 }
@@ -131,6 +139,8 @@ input:focus ~ .highlight {
 
 /* ANIMATIONS ================ */
 @keyframes inputHighlighter {
-	from { background:#5264AE; }
+  from {
+    background: linear-gradient(to right, #2b5876, #4e4376);;
+  }
   to { width:0; background:transparent; }
 }
