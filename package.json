@@ -2,26 +2,25 @@
   "name": "flow-editor",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "glamour": "^1.2.3"
+  },
   "devDependencies": {
-    "draft-js": "^0.10.1",
-    "enzyme": "^2.9.1",
-    "glamor": "^2.20.40",
-    "glamorous": "^4.5.0",
-    
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "^1.0.12",
-    "react-test-renderer": "^15.6.1",
-
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.12",
     "@types/pouchdb": "^6.3.3",
-    "pouchdb-browser": "^7.0.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1",
-    "typescript": "^3.5.1"
+    "draft-js": "^0.11.1",
+    "enzyme": "^3.10.0",
+    "glamor": "^2.20.40",
+    "glamorous": "^5.0.0",
+    "pouchdb-browser": "^7.1.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "^3.2.0",
+    "react-test-renderer": "^15.6.1",
+    "typescript": "^3.6.4"
   },
   "scripts": {
     "start": "react-scripts start",
