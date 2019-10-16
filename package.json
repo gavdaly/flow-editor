@@ -3,29 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "glamour": "^1.2.3"
-  },
-  "devDependencies": {
-    "@emotion/core": "^10.0.10",
-    "@emotion/styled": "^10.0.12",
-    "@types/pouchdb": "^6.3.3",
+    "@types/draft-js": "^0.10.37",
+    "@types/jest": "24.0.18",
+    "@types/node": "12.7.12",
+    "@types/react": "16.9.5",
+    "@types/react-dom": "16.9.1",
     "draft-js": "^0.11.1",
-    "enzyme": "^3.10.0",
-    "glamor": "^2.20.40",
-    "glamorous": "^5.0.0",
-    "pouchdb-browser": "^7.1.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "^3.2.0",
-    "react-test-renderer": "^15.6.1",
-    "typescript": "^3.6.4"
+    "react-scripts": "3.2.0",
+    "typescript": "3.6.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
