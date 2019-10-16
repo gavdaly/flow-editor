@@ -9,15 +9,15 @@ const DocumentItem = ({ title, tags, id, onDocumentSelected }) => {
   return (
     <div className="documentItem" onClick={_click}>
       {title}
-      <ul className="documentTitle">
+      <div className="documentTitle">
         {tags.map(tag => {
           return (
-            <li key={tag} className="tag">
+            <span key={tag} className="tag">
               #{tag}
-            </li>
+            </span>
           );
         })}
-      </ul>
+      </div>
     </div>
   );
 };
