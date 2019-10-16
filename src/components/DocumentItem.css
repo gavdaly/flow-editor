@@ -1,5 +1,9 @@
 .documentItem {
-  background: linear-gradient(to top, hsla(192, 68%, 40%, 0.4), hsla(192, 78%, 68%, 0.4));
+  background: linear-gradient(
+    to top,
+    hsla(192, 68%, 40%, 0.4),
+    hsla(192, 78%, 68%, 0.4)
+  );
   border-bottom: 1px rgba(0, 0, 0, 0.75);
   padding: 3px;
 }
