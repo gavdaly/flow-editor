@@ -1,5 +1,7 @@
 import React, { useState, useContext, createContext } from "react";
 
+import { docs } from "./docs"; // temp add docs for the UI
+
 export interface IDocument {
   title: string;
   id: number;
@@ -17,12 +19,13 @@ interface IDocumentContext {
   documents: IDocument[];
   updateDocument: (document: IDocument) => void;
   deleteDocument: (document: IDocument) => void;
+  createDocument: () => IDocument;
 }
 
 const DocumentContext = createContext<Partial<IDocumentContext>>({});
 
 const DocumentProvider: React.FC = props => {
-  const [documents, setDocuments] = useState<IDocument[]>([]);
+  const [documents, setDocuments] = useState<IDocument[]>(docs);
 
   function updateDocument(document: IDocument) {
     setDocuments(
@@ -37,9 +40,15 @@ const DocumentProvider: React.FC = props => {
     setDocuments(documents.filter(doc => doc.id !== document.id));
   }
 
+  function createDocument() {
+    const newDocument = { title: "", id: Date.now(), tags: [], body: "" };
+    setDocuments([...documents, newDocument]);
+    return newDocument;
+  }
+
   return (
     <DocumentContext.Provider
-      value={{ documents, updateDocument, deleteDocument }}
+      value={{ documents, updateDocument, deleteDocument, createDocument }}
       {...props}
     />
   );
