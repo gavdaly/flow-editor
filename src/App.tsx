@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import "./App.css";
 
-import { IDocument, Mode } from "./hooks/useDocuments";
-import { docs } from "./hooks/docs";
+import { IDocument, Mode, useDocument } from "./hooks/useDocuments";
 
 import FlowEditor from "./components/FlowEditor";
 import DocumentList from "./components/DocumentList";
 import SideBar from "./components/SideBar";
 
 const App: React.FC = () => {
-  const [documents, setDocuments] = useState<IDocument[]>(docs);
+  const { documents } = useDocument();
   const [mode, setMode] = useState<Mode>(Mode.Write);
   const [currentDocument, setCurrentDocument] = useState<IDocument>();
 
