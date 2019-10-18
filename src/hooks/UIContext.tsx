@@ -8,23 +8,16 @@ export enum Mode {
 
 interface IUIContext {
   mode: Mode;
-  currentDocumentID: number;
+  currentDocumentID: string;
   setMode: (mode: Mode) => void;
-  setCurrentDocumentID: (id: number) => void;
+  setCurrentDocumentID: (id: string) => void;
 }
 
-const defaults = {
-  mode: Mode.Write,
-  currentDocumentID: -1,
-  setMode: (mode: Mode) => {},
-  setCurrentDocumentID: (id: number) => {}
-};
-
-const UIContext = createContext<IUIContext>(defaults);
+const UIContext = createContext<IUIContext | undefined>(undefined);
 
 const UIProvider: React.FC = props => {
   const [mode, setMode] = useState<Mode>(Mode.Write);
-  const [currentDocumentID, setCurrentDocumentID] = useState<number>(0);
+  const [currentDocumentID, setCurrentDocumentID] = useState<string>("-1");
 
   return (
     <UIContext.Provider
@@ -34,6 +27,11 @@ const UIProvider: React.FC = props => {
   );
 };
 
-const useUI = () => useContext(UIContext);
+const useUI = () => {
+  const context = useContext(UIContext);
+  if (context === undefined)
+    throw new Error("Context must be used in Provider");
+  return context;
+};
 
 export { UIProvider, useUI };
