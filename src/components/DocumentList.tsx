@@ -22,14 +22,13 @@ export const DocumentList: React.FC = () => {
       <div>
         {documents &&
           documents.map(doc => (
-            <div key={doc.id}>
-              <DocumentItem
-                title={doc.title}
-                tags={doc.tags}
-                id={doc.id}
-                onDocumentSelected={(id: number) => setCurrentDocumentID(id)}
-              />
-            </div>
+            <DocumentItem
+              key={doc._id}
+              title={doc.title}
+              tags={doc.tags}
+              id={doc._id}
+              onDocumentSelected={(id: string) => setCurrentDocumentID(id)}
+            />
           ))}
       </div>
     </div>
