@@ -42,7 +42,7 @@ export const FlowEditor: React.FC = () => {
     updateBody(RichUtils.toggleInlineStyle(editorState, inlineStyle));
   };
 
-  const updateEditor = (a: any) => {
+  const updateEditor = (a: EditorState) => {
     updateBody(a);
   };
 
