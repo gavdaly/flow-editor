@@ -1,10 +1,32 @@
-.App {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+#root {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: auto auto auto 1fr auto;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "logo         logo         modeSelect    .      user"
+    "documentList documentList documentList  editor editor"
+    "connected    footer       footer        footer footer";
 }
-.a {
-  flex: 1;
-  display: flex;
-  flex-direction: row;
+
+#logo {
+  grid-area: logo;
+}
+
+#modeSelect {
+  grid-area: modeSelect;
+}
+
+#documentList {
+  grid-area: documentList;
+  width: 100%;
+}
+
+#editor {
+  grid-area: editor;
+}
+
+.connection {
+  grid-area: connected;
 }

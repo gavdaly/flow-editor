@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 
-import { DocumentProvider } from "./hooks/documentContext";
+import { DocumentProvider } from "./hooks/documentsContext";
 import { UIProvider } from "./hooks/UIContext";
 
 interface IProps {

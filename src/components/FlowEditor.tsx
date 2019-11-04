@@ -4,7 +4,7 @@ import "./FlowEditor.css";
 import "../../node_modules/draft-js/dist/Draft.css";
 
 import { useUI } from "../hooks/UIContext";
-import { useDocument } from "../hooks/documentContext";
+import { useDocument } from "../hooks/useDocument";
 
 import {
   Editor,
@@ -19,8 +19,8 @@ import InlineStyleControls from "./InlineStyleControls";
 
 export const FlowEditor: React.FC = () => {
   const { mode } = useUI();
-  const { currentDocument, updateDocument, updateBody } = useDocument();
-  const editorState = currentDocument.body || EditorState.createEmpty();
+  const { currentDocument, updateDocument } = useDocument();
+  const editorState = currentDocument || EditorState.createEmpty();
 
   // const handleKeyCommand = (command: string) => {
   //   const newState = RichUtils.handleKeyCommand(editorState, command);
@@ -31,35 +31,35 @@ export const FlowEditor: React.FC = () => {
 
   const onTab = (e: any) => {
     const maxDepth = 4;
-    updateBody(RichUtils.onTab(e, editorState, maxDepth));
+    updateDocument(RichUtils.onTab(e, editorState, maxDepth));
   };
 
   const toggleBlockType = (blockType: any) => {
-    updateBody(RichUtils.toggleBlockType(editorState, blockType));
+    updateDocument(RichUtils.toggleBlockType(editorState, blockType));
   };
 
   const toggleInlineStyle = (inlineStyle: any) => {
-    updateBody(RichUtils.toggleInlineStyle(editorState, inlineStyle));
+    updateDocument(RichUtils.toggleInlineStyle(editorState, inlineStyle));
   };
 
   const updateEditor = (a: EditorState) => {
-    updateBody(a);
+    updateDocument(a);
   };
 
   return (
-    <div className="documentWrapper">
-      <div className="group">
+    <div id="editor" className="documentWrapper">
+      {/* <div className="group">
         <input
           type="text"
           placeholder="title"
           value={currentDocument.title}
           onChange={event => {
-            updateDocument({ ...currentDocument, title: event.target.value });
+            updateDocument(currentDocument);
           }}
         />
         <span className="highlight"></span>
         <span className="bar"></span>
-      </div>
+      </div> */}
       <div className="editorWrapper">
         {
           {

@@ -1501,6 +1501,13 @@
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
   integrity sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
 
+"@types/uuid@^3.4.6":
+  version "3.4.6"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-3.4.6.tgz#d2c4c48eb85a757bf2927f75f939942d521e3016"
+  integrity sha512-cCdlC/1kGEZdEglzOieLDYBxHsvEOIg7kp/2FYyVR9Pxakq+Qf/inL3RKQ+PA8gOlI/NnL+fXmQH12nwcGzsHw==
+  dependencies:
+    "@types/node" "*"
+
 "@types/yargs-parser@*":
   version "13.1.0"
   resolved "https://registry.yarnpkg.com/@types/yargs-parser/-/yargs-parser-13.1.0.tgz#c563aa192f39350a1d18da36c5a8da382bbd8228"
@@ -1699,6 +1706,31 @@
     "@webassemblyjs/ast" "1.8.5"
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
+
+"@xstate/graph@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@xstate/graph/-/graph-0.2.1.tgz#06b2c0f9a320768269e7fb6071b8063ee7c93e3f"
+  integrity sha512-uR5S3YjQaPvOusCyrPG3Tv0by3Tgxnmr5ZH8MDHTNwnDqAApDx2CKIPkKYMSy8J0UbAlwfCvJiiJvJpaAuv1pQ==
+  dependencies:
+    xstate "^4.5.0"
+
+"@xstate/graph@^1.0.0-rc1.1":
+  version "1.0.0-rc1.1"
+  resolved "https://registry.yarnpkg.com/@xstate/graph/-/graph-1.0.0-rc1.1.tgz#02075ecf32720d84f71b58beb1aa5fba67e73f2a"
+  integrity sha512-ywxKr3jWECMZ+Y1kJI9PNB5HzHmAAb1NWgQFmnN/q9F3UgepNlALOI1SjP+Q3ZyDSMl6NrvPSS4e9zIkbPAJqg==
+
+"@xstate/react@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@xstate/react/-/react-0.8.0.tgz#7435f949d1211bdda61569f890801b05322385af"
+  integrity sha512-cN9YZr8eh0Pp28qID55BuYyvUBA88RUjhHF9iZGnhnIHoviXQ+Ya1yewz1+Qvekyti3aiggtVQny6oDqlDNzYg==
+
+"@xstate/test@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@xstate/test/-/test-0.1.0.tgz#b43eceb1b6f88acfac56c2d02d66464442921513"
+  integrity sha512-6RT1jfEU8v5o5fa4nmNVX19KCRcB0YZo8qboy8LWMoy4Rpp6Noyu4LjLUnCtiPCBbFdf5RK3dieWb+5pqxjfGQ==
+  dependencies:
+    "@xstate/graph" "^1.0.0-rc1.1"
+    chalk "^2.4.2"
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
@@ -10344,7 +10376,7 @@ uuid@3.2.1:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.2.1.tgz#12c528bb9d58d0b9265d9a2f6f0fe8be17ff1f14"
   integrity sha512-jZnMwlb9Iku/O3smGWvZhauCf6cvvpKi4BKRiliS3cxnI+Gz9j5MEpTz2UFuXiKPJocb7gnsLHwiS05ige5BEA==
 
-uuid@^3.0.1, uuid@^3.3.2:
+uuid@^3.0.1, uuid@^3.3.2, uuid@^3.3.3:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.3.tgz#4568f0216e78760ee1dbf3a4d2cf53e224112866"
   integrity sha512-pW0No1RGHgzlpHJO1nsVrHKpOEIxkGg1xB+v0ZmdNH5OAeAwzAVrCnI2/6Mtx+Uys6iaylxa+D3g4j63IKKjSQ==
@@ -10837,6 +10869,11 @@ xregexp@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/xregexp/-/xregexp-4.0.0.tgz#e698189de49dd2a18cc5687b05e17c8e43943020"
   integrity sha512-PHyM+sQouu7xspQQwELlGwwd05mXUFqwFYfqPO0cC7x4fxyHnnuetmQr6CjJiafIDoH4MogHb9dOoJzR/Y4rFg==
+
+xstate@^4.5.0, xstate@^4.6.7:
+  version "4.6.7"
+  resolved "https://registry.yarnpkg.com/xstate/-/xstate-4.6.7.tgz#1f325df07d75676c90d65b17a3a56692f259fd41"
+  integrity sha512-mqgtH6BXOgjOHVDxZPyW/h6QUC5kfEggh5IN8uOitjzrdCScE/a/cwcRvgcH8CGAXYReDNvasOKD0aFBWAZ1fg==
 
 xtend@^4.0.0, xtend@^4.0.2, xtend@~4.0.0, xtend@~4.0.1:
   version "4.0.2"

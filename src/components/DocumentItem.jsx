@@ -2,10 +2,11 @@ import React from "react";
 
 import "./DocumentItem.css";
 
-const DocumentItem = ({ title, tags, id, onDocumentSelected }) => {
+const DocumentItem = ({ title, tags, id }) => {
   const _click = () => {
-    return onDocumentSelected(id);
+    console.log(id);
   };
+
   return (
     <div className="documentItem" onClick={_click}>
       {title}

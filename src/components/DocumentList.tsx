@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
-import { useDocument } from "../hooks/documentContext";
-import { useUI } from "../hooks/UIContext";
+import { useDocument } from "../hooks/documentsContext";
 
 import "./DocumentList.css";
 
@@ -9,12 +8,11 @@ import DocumentItem from "./DocumentItem";
 
 export const DocumentList: React.FC = () => {
   const { documents } = useDocument();
-  const { setCurrentDocumentID } = useUI();
 
   const [filterString, setFilterString] = useState("");
 
   return (
-    <div className="documentList">
+    <div id="documentList" className="documentList">
       <input
         onChange={event => setFilterString(event.target.value)}
         value={filterString}
@@ -27,7 +25,6 @@ export const DocumentList: React.FC = () => {
               title={doc.title}
               tags={doc.tags}
               id={doc._id}
-              onDocumentSelected={(id: string) => setCurrentDocumentID(id)}
             />
           ))}
       </div>
