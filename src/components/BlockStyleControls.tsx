@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 
 import StyleButton from "./StyleButton";
 
@@ -15,8 +15,15 @@ const BLOCK_TYPES = [
   { label: "Code Block", style: "code-block" }
 ];
 
-const BlockStyleControls = props => {
-  const { editorState } = props;
+interface IBlockStyleControlProps {
+  editorState: any;
+  onToggle(style: string): void;
+}
+
+export const BlockStyleControls: React.FC<IBlockStyleControlProps> = ({
+  editorState,
+  onToggle
+}) => {
   const selection = editorState.getSelection();
   const blockType = editorState
     .getCurrentContent()
@@ -30,7 +37,7 @@ const BlockStyleControls = props => {
           key={type.label}
           active={type.style === blockType}
           label={type.label}
-          onToggle={props.onToggle}
+          onToggle={onToggle}
           style={type.style}
         />
       ))}

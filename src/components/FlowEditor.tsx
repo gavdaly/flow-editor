@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 
 import "./FlowEditor.css";
 import "../../node_modules/draft-js/dist/Draft.css";
@@ -34,11 +34,11 @@ export const FlowEditor: React.FC = () => {
     updateDocument(RichUtils.onTab(e, editorState, maxDepth));
   };
 
-  const toggleBlockType = (blockType: any) => {
+  const toggleBlockType = (blockType: string) => {
     updateDocument(RichUtils.toggleBlockType(editorState, blockType));
   };
 
-  const toggleInlineStyle = (inlineStyle: any) => {
+  const toggleInlineStyle = (inlineStyle: string) => {
     updateDocument(RichUtils.toggleInlineStyle(editorState, inlineStyle));
   };
 

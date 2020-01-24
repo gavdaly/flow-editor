@@ -1,8 +1,18 @@
-import React from "react";
+import * as React from "react";
 
 import "./DocumentItem.css";
 
-const DocumentItem = ({ title, tags, id }) => {
+interface IDocumentItemProps {
+  title: string;
+  tags: string[];
+  id: string | number;
+}
+
+export const DocumentItem: React.FC<IDocumentItemProps> = ({
+  title,
+  tags,
+  id
+}) => {
   const _click = () => {
     console.log(id);
   };

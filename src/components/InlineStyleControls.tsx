@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 
 import StyleButton from "./StyleButton";
 
@@ -9,8 +9,16 @@ var INLINE_STYLES = [
   { label: "Monospace", style: "CODE" }
 ];
 
-const InlineStyleControls = props => {
-  var currentStyle = props.editorState.getCurrentInlineStyle();
+interface IInlineStyleControlsProps {
+  editorState: any;
+  onToggle(style: string): void;
+}
+
+export const InlineStyleControls: React.FC<IInlineStyleControlsProps> = ({
+  editorState,
+  onToggle
+}) => {
+  var currentStyle = editorState.getCurrentInlineStyle();
   return (
     <div className="RichEditor-controls">
       {INLINE_STYLES.map(type => (
@@ -18,7 +26,7 @@ const InlineStyleControls = props => {
           key={type.label}
           active={currentStyle.has(type.style)}
           label={type.label}
-          onToggle={props.onToggle}
+          onToggle={onToggle}
           style={type.style}
         />
       ))}

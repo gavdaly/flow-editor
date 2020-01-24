@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { useUI } from "../hooks/UIContext";
 import { Mode } from "../Types";
 
