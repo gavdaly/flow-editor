@@ -1,13 +1,9 @@
-import React, { ReactNode } from "react";
+import * as React from "react";
 
 import { DocumentProvider } from "./hooks/documentsContext";
 import { UIProvider } from "./hooks/UIContext";
 
-interface IProps {
-  children: ReactNode;
-}
-
-export const AppProviders = ({ children }: IProps) => (
+export const AppProviders: React.FC = ({ children }) => (
   <UIProvider>
     <DocumentProvider>{children}</DocumentProvider>
   </UIProvider>
