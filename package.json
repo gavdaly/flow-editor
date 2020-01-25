@@ -13,14 +13,14 @@
     "@xstate/graph": "^0.2.1",
     "@xstate/react": "^0.8.0",
     "@xstate/test": "^0.1.0",
-    "draft-js": "^0.11.1",
+    "draft-js": "^0.11.4",
     "pouchdb": "^7.1.1",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "react-scripts": "3.2.0",
-    "typescript": "3.6.4",
-    "uuid": "^3.3.3",
-    "xstate": "^4.6.7"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "^3.3.0",
+    "typescript": "^3.7.5",
+    "uuid": "^3.4.0",
+    "xstate": "^4.7.7"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -29,6 +29,7 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
+    "parser": "babel-eslint",
     "extends": "react-app"
   },
   "browserslist": {
@@ -42,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3"
   }
 }

@@ -7,7 +7,7 @@ import "./DocumentList.css";
 import DocumentItem from "./DocumentItem";
 
 export const DocumentList: React.FC = () => {
-  const { documents } = useDocument();
+  const { documents, createDocument } = useDocument();
 
   const [filterString, setFilterString] = useState("");
 
@@ -28,6 +28,9 @@ export const DocumentList: React.FC = () => {
             />
           ))}
       </div>
+      <button onClick={() => createDocument(`${new Date()}`)}>
+        Create New Document
+      </button>
     </div>
   );
 };

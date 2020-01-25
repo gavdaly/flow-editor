@@ -4,7 +4,7 @@ import "./FlowEditor.css";
 import "../../node_modules/draft-js/dist/Draft.css";
 
 import { useUI } from "../hooks/UIContext";
-import { useDocument } from "../hooks/useDocument";
+import { useDocument } from "../hooks/documentsContext";
 
 import {
   Editor,
@@ -20,7 +20,11 @@ import InlineStyleControls from "./InlineStyleControls";
 export const FlowEditor: React.FC = () => {
   const { mode } = useUI();
   const { currentDocument, updateDocument } = useDocument();
-  const editorState = currentDocument || EditorState.createEmpty();
+  const editorState = currentDocument?.body ?? EditorState.createEmpty();
+
+  const _updateDocument = (body: EditorState) => {
+    if (currentDocument) updateDocument({ ...currentDocument, body });
+  };
 
   // const handleKeyCommand = (command: string) => {
   //   const newState = RichUtils.handleKeyCommand(editorState, command);
@@ -31,19 +35,19 @@ export const FlowEditor: React.FC = () => {
 
   const onTab = (e: any) => {
     const maxDepth = 4;
-    updateDocument(RichUtils.onTab(e, editorState, maxDepth));
+    _updateDocument(RichUtils.onTab(e, editorState, maxDepth));
   };
 
   const toggleBlockType = (blockType: string) => {
-    updateDocument(RichUtils.toggleBlockType(editorState, blockType));
+    _updateDocument(RichUtils.toggleBlockType(editorState, blockType));
   };
 
   const toggleInlineStyle = (inlineStyle: string) => {
-    updateDocument(RichUtils.toggleInlineStyle(editorState, inlineStyle));
+    _updateDocument(RichUtils.toggleInlineStyle(editorState, inlineStyle));
   };
 
   const updateEditor = (a: EditorState) => {
-    updateDocument(a);
+    _updateDocument(a);
   };
 
   return (
